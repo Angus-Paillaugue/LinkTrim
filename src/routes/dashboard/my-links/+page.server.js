@@ -9,7 +9,7 @@ export async function load({ cookies }) {
     const auth = await Auth(token);
     if(auth.error) throw redirect(301, "/log-in");
 
-    const userLinks = await linksRef.find({ username:auth.username }).project({ _id:0 }).toArray()
+    const userLinks = await linksRef.find({ username:auth.username }).sort({ date:-1 }).project({ _id:0 }).toArray()
     
     return { userLinks }
 };

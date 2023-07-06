@@ -15,15 +15,17 @@ export async function POST({ request, cookies }) {
         const token = cookies.get("token") || false;
         if(!token) throw error(500, { error:"No token provided" });
         const auth = await Auth(token);
+        // Check if redirectTo is already used. If so reuse the same link
         const exists = await linksRef.findOne({ redirectTo:urlToShorten.href, username:auth.username });
         if(exists) return new Response(JSON.stringify({ redirectTo:urlToShorten.href, id:exists.id }));
-        await linksRef.insertOne({ redirectTo:urlToShorten.href, id:id, username:auth.username });
+
+        await linksRef.insertOne({ redirectTo:urlToShorten.href, id:id, username:auth.username, date:new Date().getTime() });
     }else{
         // Check if redirectTo is already used. If so reuse the same link
         const exists = await linksRef.findOne({ redirectTo:urlToShorten.href });
         if(exists) return new Response(JSON.stringify({ redirectTo:urlToShorten.href, id:exists.id }));
     
-        await linksRef.insertOne({ redirectTo:urlToShorten.href, id:id });
+        await linksRef.insertOne({ redirectTo:urlToShorten.href, id:id, date:new Date().getTime() });
     }
     
     return new Response(JSON.stringify({ redirectTo:urlToShorten.href, id:id }));

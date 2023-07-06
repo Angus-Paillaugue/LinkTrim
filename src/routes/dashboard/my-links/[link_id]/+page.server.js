@@ -13,7 +13,9 @@ export async function load({ cookies, params }) {
     if(!link)throw redirect(301, "/login");
     if(link.username !== auth.username) throw redirect(301, "/dashboard");
 
-    const statistics = await statisticsRef.findOne({ id:params.link_id })
-    
-    return { link:(({ _id, ...o }) => o)(link), statistics:(({ _id, ...o }) => o)(statistics) }
+    const statistics = await statisticsRef.findOne({ id:params.link_id });
+
+    if(statistics) return { link:(({ _id, ...o }) => o)(link), statistics:(({ _id, ...o }) => o)(statistics) }
+
+    return { link:(({ _id, ...o }) => o)(link), statistics:statistics }
 };
