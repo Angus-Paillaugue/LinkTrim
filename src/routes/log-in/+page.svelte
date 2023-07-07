@@ -2,8 +2,6 @@
     import { enhance } from '$app/forms'
 
     export let form;
-
-    console.log(form)
 </script>
 
 <svelte:head>
@@ -12,8 +10,8 @@
 
 <form class="max-w-md mx-auto flex flex-col gap-4 p-4 rounded-lg bg-neutral text-neutral-content" use:enhance method="POST">
     <h1 class="text-5xl">Log-in</h1>
-    <input type="text" placeholder="Username" class="input input-bordered w-full" name="username" value="{form?.formData?.username}" />
-    <input type="password" placeholder="Password" class="input input-bordered w-full" name="password" value="{form?.formData?.password}" />
+    <input type="text" placeholder="Username" class="input input-bordered w-full" name="username" value="{form ? form.formData.username : ""}" />
+    <input type="password" placeholder="Password" class="input input-bordered w-full" name="password" value="{form ? form.formData.password : ""}" />
 
     <button class="btn btn-primary">Log-in</button>
 
