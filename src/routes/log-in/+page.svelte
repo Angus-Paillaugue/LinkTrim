@@ -2,6 +2,8 @@
     import { enhance } from '$app/forms'
 
     export let form;
+
+    console.log(form ? form.formData.username : "")
 </script>
 
 <svelte:head>
