@@ -19,6 +19,7 @@
 	"type": "module",
 	"dependencies": {
 		"@tailwindcss/typography": "^0.5.9",
+		"@sveltejs/adapter-vercel": "^3.0.1",
 		"bcrypt": "^5.1.0",
 		"chart.js": "^4.3.0",
 		"jsonwebtoken": "^9.0.0",
