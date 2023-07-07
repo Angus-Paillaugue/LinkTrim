@@ -28,7 +28,7 @@
         <img src="hero-illustration.svg" alt="Hero illustration" class="lg:max-w-lg md:w-2/3" />
         <div>
             <h1 class="text-5xl font-bold">Easley shorten urls !</h1>
-            <p class="py-6">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit recusandae nihil nemo iusto molestiae excepturi tempore tempora veritatis nesciunt? Molestiae, non aut laborum maxime tempore mollitia illo possimus impedit saepe?</p>
+            <p class="py-6">Create short, powerful and trackable links LinkTim.</p>
             <form on:submit|preventDefault={shorten} class="join w-full justify-center lg:justify-start">
                 <input type="link" placeholder="Your link" class="input input-bordered {heroInputError ? "input-error" : "input-primary"} w-full max-w-md join-item" bind:value={heroLinkInputValue} />
                 <button class="btn {heroInputError ? "btn-error" : "btn-primary"} join-item no-animation">Shorten</button>
