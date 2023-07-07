@@ -15,9 +15,9 @@
                     <div class="w-10 rounded-full">
                         <!-- svelte-ignore a11y-img-redundant-alt -->
                         {#if data?.auth}
-                            <img src="{data.auth.profilePicture}" alt="Profile picture"/>
+                            <img src="/{data.auth.profilePicture}" alt="Profile picture"/>
                         {:else}
-                            <img src="defaultProfilePicture.png" alt="Profile picture"/>
+                            <img src="/defaultProfilePicture.png" alt="Profile picture"/>
                         {/if}
                     </div>
                 </div>
