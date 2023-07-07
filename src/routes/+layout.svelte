@@ -1,5 +1,6 @@
 <script>
     import "../app.css";
+    import Analytics from "$lib/components/Analytics.svelte"
 
     export let data;
 </script>
@@ -39,6 +40,8 @@
         <slot />
     </article>
 </main>
+
+<Analytics />
 
 <footer class="footer footer-center p-4 bg-neutral text-base-content">
     <p>Copyright © {new Date().getFullYear()} - All right reserved by Angus Paillaugue</p>
