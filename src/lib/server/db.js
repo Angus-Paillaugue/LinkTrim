@@ -4,7 +4,7 @@ import { MONGODB_CONNEXION_STRING } from "$env/static/private"
 const client = new MongoClient(MONGODB_CONNEXION_STRING);
 await client.connect();
 
-const database = client.db('urlShortener');
+const database = client.db('LinkTrim');
 
 const linksRef = database.collection("links");
 const usersRef = database.collection("users");
