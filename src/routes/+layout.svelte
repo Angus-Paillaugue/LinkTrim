@@ -5,6 +5,13 @@
     export let data;
 </script>
 
+<svelte:head>
+    <meta name="keywords" content="Url, Link">
+    <meta name="author" content="Angus Paillaugue">
+</svelte:head>
+
+<Analytics />
+
 <main class="min-h-screen">
     <nav class="navbar bg-neutral text-neutral-content">
         <div class="flex-1">
@@ -40,8 +47,6 @@
         <slot />
     </article>
 </main>
-
-<Analytics />
 
 <footer class="footer footer-center p-4 bg-neutral text-base-content">
     <p>Copyright © {new Date().getFullYear()} - All right reserved by Angus Paillaugue</p>
