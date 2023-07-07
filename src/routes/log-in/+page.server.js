@@ -17,14 +17,14 @@ export const actions = {
     default: async ({ cookies, request }) => {
         try{
             const formData = Object.fromEntries(await request.formData());
-            const { email, password } = formData;
-    
-            const userExists = await usersRef.findOne({ username:email });
-            if(!email) return { success:false, formData:formData, message:"No account with this email!" };
+            const { username, password } = formData;
+            
+            const userExists = await usersRef.findOne({ username:username });
+            if(!userExists) return { success:false, formData:formData, message:"No account with this username!" };
             const compare = await bcrypt.compare(password, userExists.password);
             if(compare){
-                cookies.set("token", generateAccessToken(email), { path:"/", sameSite:"strict" });
-                throw redirect(301, "/dashboard");
+                cookies.set("token", generateAccessToken(username), { path:"/", sameSite:"strict" });
+                throw redirect(303, "/dashboard");
             }
             return { success:false, formData:formData, message:"Incorrect password!" };
         }catch(err){
@@ -33,4 +33,4 @@ export const actions = {
     }
 };
 
-function generateAccessToken(email) {return jwt.sign(email, AUTH_TOKEN_SECRET);}
+function generateAccessToken(username) {return jwt.sign(username, AUTH_TOKEN_SECRET);}

@@ -4,6 +4,8 @@
 
     export let data;
 
+    let noStatistics = false;
+
     if(data.statistics){
         const views = {};
         data.statistics.views.map(function (x) { x = roundMinutes(new Date(x)).getTime(); views[x] = (views[x] || 0) + 1; });
@@ -42,8 +44,9 @@
                 }
             });
         });
+    }else{
+        noStatistics = true;
     }
-
 
     function roundMinutes(date) {
         date.setHours(date.getHours() + Math.floor(date.getMinutes()/60));
@@ -58,9 +61,13 @@
 
 <div class="grid">
     <p class="text-xl">
-        <a class="link" target="_blank" href="{data.link.redirectTo}">{data.link.redirectTo}</a>
+        <a class="link text-ellipsis overflow-hidden " target="_blank" href="{data.link.redirectTo}">{data.link.redirectTo.length > 50 ? new URL(data.link.redirectTo).origin : data.link.redirectTo}</a>
         <i class="bi bi-arrow-right-short"></i>
         <a class="link" target="_blank" href="{data.shortUrlBaseUrl+data.link.id}">{data.shortUrlBaseUrl+data.link.id}</a>
     </p>
-    <canvas id="chart"></canvas>
+    {#if noStatistics}
+        <h3 class="text-3xl font-semibold mt-4">There are no statistics for this link !</h3>
+    {:else}
+        <canvas id="chart"></canvas>
+    {/if}
 </div>

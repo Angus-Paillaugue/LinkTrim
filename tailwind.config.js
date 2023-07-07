@@ -3,6 +3,13 @@ export default {
   content: [
     './src/**/*.{html,js,svelte}',
   ],
+  theme:{
+    extend:{
+      fontFamily:{
+        sans:["Poppins"]
+      },
+    },
+  },
   plugins: [
     require("@tailwindcss/typography"),
     require("daisyui")

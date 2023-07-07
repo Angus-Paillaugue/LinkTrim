@@ -15,7 +15,7 @@
             My links
         </a>
 
-        <a href="/settings" class="flex justify-center items-center w-full p-4 py-6 rounded-2xl bg-transparent border border-base-content/5 hover:shadow-xl transition-all gap-4 text-xl hover:-translate-y-1 duration-200">
+        <a href="/dashboard/settings" class="flex justify-center items-center w-full p-4 py-6 rounded-2xl bg-transparent border border-base-content/5 hover:shadow-xl transition-all gap-4 text-xl hover:-translate-y-1 duration-200">
             <i class="bi bi-gear text-2xl"></i>
             Settings
         </a>

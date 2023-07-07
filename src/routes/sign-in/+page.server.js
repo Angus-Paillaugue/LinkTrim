@@ -27,7 +27,7 @@ export const actions = {
 
         const salt = await bcrypt.genSalt(10);
         const hash = await bcrypt.hash(password, salt);
-        await usersRef.insertOne({ username: username, email:email, password:hash });
+        await usersRef.insertOne({ username: username, email:email, password:hash, profilePicture:"defaultProfilePicture.png" });
         cookies.set("token", generateAccessToken(username), { path:"/" });
         throw redirect(301, "/dashboard");
     }

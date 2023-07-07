@@ -7,7 +7,7 @@
 <main class="min-h-screen">
     <nav class="navbar bg-neutral text-neutral-content">
         <div class="flex-1">
-            <a class="btn btn-ghost normal-case text-xl" href="/">daisyUI</a>
+            <a class="btn btn-ghost normal-case text-xl" href="/">LinkTrim</a>
         </div>
         <div class="flex-none">
             <div class="dropdown dropdown-end dropdown-hover">
@@ -39,3 +39,7 @@
         <slot />
     </article>
 </main>
+
+<footer class="footer footer-center p-4 bg-neutral text-base-content">
+    <p>Copyright © {new Date().getFullYear()} - All right reserved by Angus Paillaugue</p>
+</footer>

@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900;1000&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,4 +13,26 @@
 }
 ::-webkit-scrollbar-thumb {
     @apply rounded-full bg-neutral-content
+}
+
+h1 {
+    @apply text-5xl font-sans font-semibold
+}
+h2 {
+    @apply text-4xl font-sans font-semibold
+}
+h3 {
+    @apply text-3xl font-sans font-semibold
+}
+h4 {
+    @apply text-2xl font-sans font-semibold
+}
+h5 {
+    @apply text-xl font-sans font-semibold
+}
+h6 {
+    @apply text-lg font-sans font-semibold
+}
+p, li {
+    @apply block text-base leading-8 font-normal dark:text-gray-300 text-gray-600 font-['Mulish'] slashed-zero lining-nums
 }

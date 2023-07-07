@@ -23,7 +23,7 @@
 	<title>Home</title>
 </svelte:head>
 
-<div class="hero min-h-screen">
+<section class="hero min-h-screen">
     <div class="hero-content flex-col lg:flex-row-reverse">
         <img src="hero-illustration.svg" alt="Hero illustration" class="lg:max-w-lg md:w-2/3" />
         <div>
@@ -40,6 +40,30 @@
             {/if}
         </div>
     </div>
-</div>
+</section>
 
 <ShortenUrlModal urlToShorten={urlToShorten} auth={data.auth ?? false}/>
+
+<section>
+
+    <div class="max-w-screen-lg mx-auto gap-6">
+
+        <div class="grid grid-cols-1 grid-rows-2 md:grid-cols-9 md:grid-rows-1 gap-4">
+            <img src="linkShortener.svg" alt="" class="col-span-5">
+            <div class="md:col-span-4 md:col-start-6 space-y-4 my-auto">
+                <h2 class="text-3xl font-bold">Create short links in seconds</h2>
+                <p>With LinkTrim, you can create short URLs quickly and easily, which saves time and improves productivity. No need to manually shorten lengthy URLs and risk making mistakes.</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 grid-rows-2 md:grid-cols-9 md:grid-rows-1 gap-4">
+            <div class="col-span-5 my-auto">
+                <h2 class="text-3xl font-bold">Track your link clicks</h2>
+                <p>LinkTrim provides you with detailed statistics on usage, so you can see how your links are performing. This helps you make data-driven decisions to improve your marketing campaigns and conversions.</p>
+            </div>
+            <img src="websiteDevelopment.svg" alt="" class="md:col-span-4 md:col-start-6">
+        </div>
+
+    </div>
+
+</section>
