@@ -22,7 +22,6 @@ export const actions = {
         if(userExists) return { success:false, formData:formData, message:"This email is already in use in another account!" };
 
         const usernameIsTaken = await usersRef.findOne({ username:username });
-        console.log(usernameIsTaken);
         if(usernameIsTaken) return { success:false, formData:formData, message:"This username is already taken!" };
 
         const salt = await bcrypt.genSalt(10);
