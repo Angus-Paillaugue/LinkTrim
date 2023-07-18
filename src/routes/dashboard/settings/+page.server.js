@@ -12,7 +12,6 @@ export async function load({ cookies  }) {
     return
 };
 
-/** @type {import('./$types').Actions} */
 export const actions = {
     save: async ({ request, cookies }) => {
         const formData = Object.fromEntries(await request.formData());
@@ -35,6 +34,6 @@ export const actions = {
         if(auth.error) throw error(500, { error:auth.error });
         
         await usersRef.deleteOne({ username:auth.username });
-        throw redirect(303, "/sign-in")
+        throw redirect(303, "/sign-in");
     },
 };
