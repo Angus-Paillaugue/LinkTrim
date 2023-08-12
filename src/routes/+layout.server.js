@@ -1,5 +1,5 @@
 import { Auth } from "$lib/server/auth"
-const shortUrlBaseUrl = "http://localhost:5173/"
+const shortUrlBaseUrl = "https://linktrim.hellkeeper.fr/"
 
 export const load = async ({ cookies, url }) => {
     const { pathname } = url;
